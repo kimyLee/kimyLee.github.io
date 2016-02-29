@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,telephone=no" >
+
+    <title></title>
+    <link href='http://fonts.useso.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="./css/style.css?v=4">
+    <script src="./js/jquery.min.js"></script>
+
+</head>
+<body>
+     <div class="container" id="content">
+
+     </div>
+     <!--<div class="" id="bg"></div>-->
+     <div id="fixbtn">
+         <a class="weui_grid home_grid info_grid" id="info_btn" href="javascript:;" data-id="info" >
+             <div class="weui_grid_icon"><img src="./img/info.png"/> </div>
+         </a>
+         <a class="weui_grid home_grid skill_grid" id="skill_btn" href="javascript:;" data-id="personSkill">
+             <div class="weui_grid_icon"><img src="./img/skill.png"/> </div>
+         </a>
+         <a class="weui_grid home_grid reward_grid" id="reward_btn" href="javascript:;" data-id="reward" >
+             <div class="weui_grid_icon"><img src="./img/reward.png"/> </div>
+         </a>
+         <a class="weui_grid home_grid experience_grid" id="experience_btn" href="javascript:;" data-id="experience">
+             <div class="weui_grid_icon"><img src="./img/experience.png"/> </div>
+         </a>
+         <a class="weui_grid home_grid demo_grid" id="share_btn" href="javascript:;" data-id="demo">
+             <div class="weui_grid_icon"><img src="./img/share.png"/> </div>
+             <p class="weui_grid_label">share</p>
+
+         </a>
+
+     </div>
+     <!--公用弹框-->
+    <!-- <div class="weui_dialog_alert hide" id="dialog1">
+         <div class="weui_mask"></div>
+         <div class="weui_dialog">
+             <div class="weui_dialog_hd"><strong class="weui_dialog_title"></strong></div>
+             <div class="weui_dialog_bd"></div>
+             <div class="weui_dialog_ft">
+                 <a href="javascript:;" class="weui_btn_dialog default">取消</a>
+                 <a href="javascript:;" class="weui_btn_dialog primary">确定</a>
+             </div>
+         </div>
+     </div>-->
+ <!--主页-->
+     <script type="text/html" id="tpl_home">
+         <div class="page" id="home">
+    <div class="myHeader home">
+        <img class="userPic" src="img/me.jpg"/>
+        <div class="userContent">
+            <p class="username">李小浩</p>
+            <p class="userSign">13672415328</p>
+            <p class="userSign">kimylee@foxmail.com</p>
+        </div>
+
+    </div>
+    <div class="weui_grids">
+        <a class="weui_grid" href="javascript:;" data-id="" >
+
+        </a>
+        <a class="weui_grid home_grid other_grid" href="javascript:;" data-id="">
+            <p class="title_label">Info</p>
+            <p class="other_label">&larr;visit my personal info</p>
+        </a>
+        <a class="weui_grid" href="javascript:;" data-id="" >
+
+        </a>
+        <a class="weui_grid home_grid other_grid " href="javascript:;" data-id="">
+            <p class="title_label">reward</p>
+            <p class="other_label">the glory I had got &darr;</p>
+        </a>
+        <a class="weui_grid" href="javascript:;" data-id="" >
+
+        </a>
+        <a class="weui_grid home_grid other_grid grid_dark" href="javascript:;" data-id="">
+            <p class="title_label">Skill</p>
+            <p class="other_label">&uarr; What skills I can do</p>
+        </a>
+        <a class="weui_grid" href="javascript:;" data-id="" >
+
+        </a>
+        <a class="weui_grid home_grid other_grid grid_blue" href="javascript:;" data-id="">
+            <p class="title_label">experience</p>
+            <p class="other_label">short of my experience &rarr;</p>
+        </a>
+        <a class="weui_grid" href="javascript:;" data-id="" >
+
+        </a>
+
+
+    </div>
+</div>
+     </script>
+     <script type="text/html" id="tpl_info">
+         <div class="page" id="Info">
+    <div class="outer">
+        <div class="myHeader myInfo">
+            <p>他有爱。<br/>他的目标，是星辰大海。</p>
+            <img class="skillPic" src="img/me.jpg"/>
+        </div>
+    </div>
+    <div class="outer">
+        <div class="myItem myArticle">
+            <span class="myTag blue">info</span>
+            <hr class="myLine1">
+            <p><span class="blueTitle">Name:</span> Li.ZhongHao</p>
+            <p><span class="blueTitle">Age:</span> 21</p>
+            <span class="myTag purple marginTop"> contact</span>
+            <hr class="myLine2">
+            <p><span class="purpleTitle">Phone:</span> 13672415328</p>
+            <p><span class="purpleTitle">Mail:</span> kimylee@foxmail.com</p>
+            <span class="myTag pink marginTop">Education</span>
+            <hr class="myLine3">
+            <p><span class="pinkTitle">Education:</span><br/>
+                undergraduate of 2016.<br/>
+                Software Engineering.  <br/>
+                South China University Of Technology</p>
+            <p><span class="pinkTitle">Language:</span> Chinese/English</p>
+        </div>
+    </div>
+</div>
+     </script>
+     <script type="text/html" id="tpl_reward">
+         <div class="page">
+    <div class="header ">
+        <span class="myTag greenBg block">Reward</span>
+        <hr class="greenLine">
+    </div>
+    <div class="nav-menu">
+        <div class="left-nav">
+            <a class="nav-item"><span>2013</span></a>
+            <a class="nav-item"><span>2014</span></a>
+            <a class="nav-item"><span>2015</span></a>
+            <a class="nav-item"><span>2016</span></a>
+        </div>
+        <div class="right-content" id="eventContent">
+            《基于敏感元素视频检索系统》，获软著权，第二作者<br/>
+             自制网页小游戏《立方体》获"鸣月信步杯"网页设计大赛第2名<br/>
+        </div>
+    </div>
+    <div class="theLine">
+        <div class="round"></div>
+        <div class="line" id="myLine"></div>
+        <div class="lightRound" id="myRound">
+            <div class="round2"></div>
+            <div class="round3"></div>
+        </div>
+    </div>
+
+</div>
+     </script>
+     <script type="text/html" id="tpl_personSkill">
+         <div class="page" id="Skill">
+    <div class="mySkill">
+        <div class="col">
+            <div class="skillItem">
+                <div class="front">
+                    <img class="icon" src="img/html5.png"/>
+                    <p class="iShort">HTML5</p>
+                </div>
+                <div class="back">
+                    <p><span style="font-size: 0.9rem">B</span>e familiar with and able to write basic HTML/HTML5 page</p>
+                </div>
+            </div>
+            <div class="skillItem">
+                <div class="front">
+                <img class="icon" src="img/css.png"/>
+                <p class="iShort">CSS/CSS3</p>
+                </div>
+                <div class="back">
+                    <p><span style="font-size: 0.9rem">F</span>amiliar with common CSS/CSS3 style,can achieve CSS animation</p>
+                </div>
+            </div>
+            <div class="skillItem">
+                <div class="front">
+                <img class="icon" src="img/icon.png"/>
+                <p class="iShort">programmer</p>
+                </div>
+                <div class="back">
+                    <p><span style="font-size: 0.9rem">A</span>s a programmer from SCUT,also know the bg languages like java, C++ </p>
+                </div>
+            </div>
+            <br class="clear">
+        </div>
+        <div class="col colRight">
+            <div class="skillItem">
+                <div class="front">
+                <img class="icon" src="img/js.png"/>
+                <p class="iShort">javascript</p>
+                </div>
+                <div class="back">
+                    <p><span style="font-size: 0.9rem">T</span>he common language.can achieve the logic or write simple functional plug</p>
+                </div>
+            </div>
+            <div class="skillItem">
+                <div class="front">
+                <img class="icon" src="img/jquery.png"/>
+                <p class="iShort">jQuery</p>
+                </div>
+                <div class="back">
+                    <p><span style="font-size: 0.9rem">B</span>e familiar with and is the most used framework tool of JS.</p>
+                </div>
+            </div>
+            <div class="skillItem">
+                <div class="front">
+                <img class="icon more" src="img/more.png"/>
+                <p class="iShort">More Skill</p>
+                </div>
+                <div class="back">
+                    <p><span style="font-size: 0.9rem">E</span>xcept above,also Find out about Angular/react and so on of headFirst</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+     </script>
+     <script type="text/html" id="tpl_experience">
+         <div class="page">
+    <div class="header ">
+        <span class="myTag blueBg block">experience</span>
+        <hr class="blueLine">
+    </div>
+    <div class="exp-container" data-done="1">
+        <div class="EPage-item item1">
+            <div class="EPage-title greenBg"><span>ZiRui</span></div>
+            <div class="EPage-content">
+                <p>
+                    The first company I work for web-developer intern, major in developing some website or web pages,
+                    begin in my school days,last for a month.
+                </p>
+            </div>
+        </div>
+        <div class="EPage-item item2">
+            <div class="EPage-title blue"><span>XinBu</span></div>
+            <div class="EPage-content">
+                <p>
+                   A HTML5 games market company,work as HTML5 programmer writing the ad pages,has completed the project for
+                    company like 红牛，三星极光 and so on.
+                </p>
+            </div>
+        </div>
+        <div class="EPage-item item3">
+            <div class="EPage-title purple"><span>Flamingo</span></div>
+            <div class="EPage-content">
+                <p>
+                   last for 8 months. major in the site development, including the daily activity page projects.
+                    some project like the web community of guopang group(see in guopan.cn)
+                </p>
+            </div>
+        </div>
+    </div>
+
+</div>
+     </script>
+     <script type="text/html" id="tpl_demo">
+         <div class="page">
+
+    <div class="outer">
+        <div class="myItem myArticle">
+            <span class="myTag blue">Some work</span>
+            <hr class="myLine1">
+            <p><span class="blueTitle">A daily life manager for lazy man:</span><br/>
+                <a href="http://kimylee.github.io/" style="color: #666">→LazyLife</a></p>
+            <span class="myTag purple marginTop">wait for...</span>
+            <hr class="myLine2">
+            <p><span class="purpleTitle">once I make sure it is OK that will be put on.<br/> THK. By, Lee. </span></p>
+
+
+        </div>
+    </div>
+</div>
+     </script>
+     <script src="./js/main.js"></script>
+
+     <script>
+     ;(function (doc, win) {
+     var docEl = doc.documentElement,
+     resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+     recalc = function () {
+     var size = 20;
+     var clientWidth = Math.min(Math.max(320,docEl.clientWidth),640);
+     if (!clientWidth) return;
+     docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+     };
+
+     if (!doc.addEventListener) return;
+     win.addEventListener(resizeEvt, recalc, false);
+     doc.addEventListener('DOMContentLoaded', recalc, false);
+     })(document, window);
+     </script>
+
+</body>
+</html>
