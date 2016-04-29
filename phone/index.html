@@ -13,6 +13,7 @@
 <div id="show4"></div>
 <div id="show5"></div>
 <div id="show6"></div>
+<div id="show7"></div>
 <script>
     if ('ondeviceproximity' in window) {
         document.getElementById('show').innerHTML='支持';
@@ -39,6 +40,10 @@
             document.getElementById('show6').innerHTML = event.near;
         });
     }
+   if ('ondevicelight' in window) {
+// 支持返回是否有物体靠近
+        document.getElementById('show7').innerHTML='支持光强';
+    } 
 </script>
 </body>
 </html>
