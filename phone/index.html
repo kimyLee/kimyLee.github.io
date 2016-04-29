@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="show"></div>
+<div id="show2"></div>
+<div id="show3"></div>
+<div id="show4"></div>
+<div id="show5"></div>
+<div id="show6"></div>
+<script>
+    if ('ondeviceproximity' in window) {
+        document.getElementById('show').innerHTML='支持';
+// 支持返回距离信息
+    }else{
+        document.getElementById('show').innerHTML='不支持'
+    }
+
+    if ('onuserproximity' in window) {
+// 支持返回是否有物体靠近
+        document.getElementById('show2').innerHTML='靠近支持';
+    }
+
+    if ('ondeviceproximity' in window) {
+        window.addEventListener('deviceproximity', function(event) {
+            document.getElementById('show3').innerHTML = event.value;
+            document.getElementById('show4').innerHTML = event.max;
+            document.getElementById('show5').innerHTML = event.min;
+        });
+    }
+
+    if ('onuserproximity' in window) {
+        window.addEventListener('userproximity', function(event) {
+            document.getElementById('show6').innerHTML = event.near;
+        });
+    }
+</script>
+</body>
+</html>
