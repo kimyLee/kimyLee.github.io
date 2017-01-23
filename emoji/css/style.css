@@ -1,0 +1,21 @@
+body{font-family: Microsoft YaHei, Helvetica Neue, Helvetica, Roboto, Heiti SC, STHeiTi, Arial, sans-serif;background-color: #fbf9fe;}
+a{color: #000}
+/********通用*********/
+.hide{display: none;}
+.green{color: #3cc51f}
+.blue{color: #225fba}
+/*副标题*/
+.SecondTitle{padding: 1rem;font-size: larger;font-weight: 600;}
+/*按钮或其他间距*/
+.spacing{padding:0 15px;background: #fff}
+.fixBottom{position: fixed;left: 0;bottom: 0;width: 100%;box-sizing: border-box;padding-bottom: 5px;}
+
+/********结构*********/
+.page{position: absolute;top:0;left: 0;right: 0;bottom: 0;background-color: #fbf9fe;width: 100%;overflow-y: auto;
+    -webkit-overflow-scrolling: touch;}
+.header{padding: 1rem 0}
+.pageTitle{text-align: center;font-size: 34px;font-weight: 400;}
+.pageSecondTitle{text-align: center;font-size: 0.7rem;color: #888}
+
+.content{margin-bottom: 50px;}
+.container{overflow: hidden;position: absolute;top:0;left: 0;right: 0;bottom: 0;}
